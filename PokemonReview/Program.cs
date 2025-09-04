@@ -12,7 +12,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion("9.4.0")));
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
