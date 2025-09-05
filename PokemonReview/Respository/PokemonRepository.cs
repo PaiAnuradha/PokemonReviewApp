@@ -15,5 +15,20 @@ namespace PokemonReviewApp.Respository
         {
             return _context.Pokemons.OrderBy(p => p.Id).ToList();
         }
+
+        public Pokemon GetPokemons(int id)
+        {
+            return _context.Pokemons.Where(p => p.Id == id).FirstOrDefault();
+        }
+
+        public Pokemon GetPokemons(string name)
+        {
+            return _context.Pokemons.Where(p => p.Name == name).FirstOrDefault();
+        }
+
+        public bool PokemonExists(int pokeId)
+        {
+            return _context.Pokemons.Any(p => p.Id == pokeId);
+        }
     }
 }
